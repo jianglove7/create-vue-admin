@@ -37,7 +37,7 @@ Vue.use(ElementUI, {
   size: 'small',
   zIndex: 3000
 });
-
+console.log('test');
 Vue.config.productionTip = false;
 
 new Vue({
