@@ -1,4 +1,4 @@
-# create-vue-app
+# create-vue-admin
 
 ## Project setup
 ```
