@@ -1,8 +1,17 @@
 <template>
-  <el-header style="text-align: right; line-height:60px;">
-    
-    <Lang></Lang>
-    <UserSet></UserSet>
+  <el-header>
+    <div>
+      <cc-svg-icon class-name="menu-fold" icon-class="menu-fold" @click="handleMenuFold"></cc-svg-icon>
+    </div>
+    <div style="text-align: right; line-height:60px;">
+      <!-- <transition-group tag="el-breadcrumb" separator-class="el-icon-arrow-right" name="fade-move"> -->
+        <el-breadcrumb-item v-for="item in getBreadcrumbItems" :key="item.path">{{ $t(item.name) }}</el-breadcrumb-item>
+      <!-- </transition-group> -->
+    </div>
+    <div>
+       <Lang></Lang>
+      <UserSet></UserSet>
+    </div>
   </el-header>
 </template>
 
@@ -42,7 +51,7 @@ export default {
 
     if (!this.userData.id && sessionStorage.userData) {
       try {
-        this.$store.dispatch('SetUserData', JSON.parse(sessionStorage.userData));
+        this.$store.dispatch('GetUserInfo', JSON.parse(sessionStorage.userData));
       } catch (error) {}
     }
   },

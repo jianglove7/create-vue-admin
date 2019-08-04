@@ -1,5 +1,5 @@
 <template>
-  <el-dropdown  @command="handleCommand" size="medium">
+  <el-dropdown class="a-lang"  @command="handleCommand" size="medium">
     <span class="el-dropdown-link">
       语言<i class="el-icon-arrow-down el-icon--right"></i>
     </span>
@@ -68,8 +68,11 @@ export default {
 </script>
 
 <style scoped lang="scss">
- .el-header{
-   width: 100%;
-   background-color: #fff;
- }
+.el-dropdown-link{
+  padding: 0 15px;
+  line-height: 60px;
+}
+.el-dropdown:hover{
+  background-color: #f9f9f9;
+}
 </style>

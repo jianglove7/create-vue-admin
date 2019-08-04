@@ -1,5 +1,5 @@
 <template>
-  <el-aside class="asider" width="200px">
+  <el-aside class="a-sider" width="200px">
     <el-menu :default-openeds="['1', '3']">
       <el-submenu index="1">
         <template slot="title"><i class="el-icon-message"></i>导航一</template>
@@ -62,7 +62,7 @@ export default {
 
 </script>
 <style lang="scss">
-.asider{
+.a-sider{
   text-align: left;
   background-color:#000;
   min-height: 100vh;

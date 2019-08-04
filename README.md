@@ -1,4 +1,12 @@
 # create-vue-admin
+## 功能
+- √ 配置多环境变量
+- √ 配置基础 vue.config.js
+- √ 配置 proxy 跨域
+- √ 登陆功能
+- √ 静态mock功能，api模块化功能
+
+
 
 ## Project setup
 ```

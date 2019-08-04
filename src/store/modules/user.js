@@ -45,6 +45,7 @@ export default {
       commit,
       dispatch
     }, params) {
+      // 获取用户基础信息
       return api.login.getUserInfo(params)
         .then(({
           data

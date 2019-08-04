@@ -24,7 +24,7 @@ let routes = [{
   component: Layout,
   children: [{
     path: '/index',
-    component: () => import('@/views/Index.vue'),
+    component: () => import('@/views/dashboard'),
     meta: {
       name: '首页',
     }

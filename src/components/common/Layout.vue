@@ -38,12 +38,14 @@ export default {
     };
   },
   beforeCreate() {
+    // 没有拿到userData的化就重新设置，再设置语言
     if (!sessionStorage.userData) {
       this.$store.dispatch('GetUserInfo', {}).then(data => { 
         setLang(this.$store.state.user.lang);
       });
     }
   },
+  
   methods: {
     reload() {
       this.isRouterAlive = false;

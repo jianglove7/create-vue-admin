@@ -1,9 +1,11 @@
 {
     "code": 200,
     "data": {
+        "Authorization": "abcdefg",
         "userName": "admin",
         "language": "zh_CN_",
-        "id":"asdsds-sdasdas-asdasdas"
+        "avatar": "./static/img/head/userImg.jpg",
+        "id": "asdsds-sdasdas-asdasdas"
     },
     "msg": "ok"
 }
