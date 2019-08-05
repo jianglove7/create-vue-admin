@@ -1,11 +1,11 @@
 <template>
   <el-dropdown class="a-lang"  @command="handleCommand" size="medium">
     <span class="el-dropdown-link">
-      语言<i class="el-icon-arrow-down el-icon--right"></i>
+      {{$t('header.selectLang')}}<i class="el-icon-arrow-down el-icon--right"></i>
     </span>
     <el-dropdown-menu slot="dropdown">
       <template v-for="(lang,index) in langList">
-        <el-dropdown-item :class="index === locale?'active':''" :key="index">{{lang}}</el-dropdown-item>
+        <el-dropdown-item :class="index === locale?'active':''" :key="index" :command="index">{{lang}}</el-dropdown-item>
       </template>
     </el-dropdown-menu>
   </el-dropdown>
@@ -60,8 +60,9 @@ export default {
     }
   },
   methods: {
-    handleCommand() {
-
+    handleCommand(lang) {
+      console.log(lang);
+      setLang(lang);
     }
   },
 };
@@ -69,7 +70,8 @@ export default {
 
 <style scoped lang="scss">
 .el-dropdown-link{
-  padding: 0 15px;
+  display: inline-block;
+  padding: 0 10px;
   line-height: 60px;
 }
 .el-dropdown:hover{

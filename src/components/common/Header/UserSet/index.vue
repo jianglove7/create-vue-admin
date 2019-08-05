@@ -90,7 +90,8 @@ export default {
       }
     }
     .el-dropdown-link{
-      padding: 0 15px;
+      display: inline-block;
+      padding: 0 10px;
       line-height: 60px;
     }
   }

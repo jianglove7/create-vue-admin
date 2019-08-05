@@ -1,7 +1,7 @@
 export default [
   {
     name: 'dashboard',
-    path: '/dashboard',
+    path: '/index',
     icon: 'dashboard'
   },
   {
@@ -10,18 +10,18 @@ export default [
     icon: 'component',
     children: [
       {
-        name: 'count-to',
-        path: '/components/count-to',
+        name: 'countTo',
+        path: '/components/countTo',
         icon: 'rise'
       },
       {
-        name: 'tree-table',
-        path: '/components/tree-table',
+        name: 'treeTable',
+        path: '/components/treeTable',
         icon: 'tree'
       },
       {
-        name: 'drag-list',
-        path: '/components/drag-list',
+        name: 'dragList',
+        path: '/components/dragList',
         icon: 'drag'
       },
       {
@@ -30,19 +30,14 @@ export default [
         icon: 'markdown'
       },
       {
-        name: 'rich-text',
-        path: '/components/rich-text',
+        name: 'richText',
+        path: '/components/richText',
         icon: 'rich-text'
       },
       {
         name: 'drawer',
         path: '/components/drawer',
         icon: 'drawer'
-      },
-      {
-        name: 'svg-icons',
-        path: '/components/svg-icons',
-        icon: 'svg'
       }
     ]
   },
@@ -52,8 +47,8 @@ export default [
     icon: 'optimization',
     children: [
       {
-        name: 'image-compression',
-        path: '/optimization/image-compression',
+        name: 'imageCompression',
+        path: '/optimization/imageCompression',
         icon: 'compression'
       },
       {
@@ -68,4 +63,4 @@ export default [
     name: 'i18n',
     icon: 'language'
   }
-]
+];

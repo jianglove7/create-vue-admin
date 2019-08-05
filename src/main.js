@@ -3,7 +3,9 @@ import App from './App.vue';
 import router from './router';
 import store from './store';
 import ElementUI from 'element-ui';
-import {
+import 
+{
+  i18n,
   setLang
 } from '@/locale/i18n-setup';
 import './locale/i18n-setup.js';
@@ -25,8 +27,10 @@ for (let filter in Object.keys(filters)) {
 router.beforeEach((to, from, next) => {
   // 切换路由，要先关闭loading
   store.dispatch('InitUserInfo').then(() => {
-    // console.log(store.state.user);
-    setLang(store.state.user.lang);
+    // 设置用户信息语言
+    if (store.state.user.lang) {
+      setLang(store.state.user.lang);
+    }
     next();
   }).catch(() => {
     if (to.path === '/login') {
@@ -39,7 +43,8 @@ router.beforeEach((to, from, next) => {
 
 Vue.use(ElementUI, {
   size: 'small',
-  zIndex: 3000
+  zIndex: 3000,
+  i18n: (key, value) => i18n.t(key, value)
 });
 
 Vue.config.productionTip = false;
@@ -47,5 +52,6 @@ Vue.config.productionTip = false;
 new Vue({
   router,
   store,
+  i18n,
   render: h => h(App)
 }).$mount('#app');

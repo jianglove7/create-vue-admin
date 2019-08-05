@@ -1,6 +1,6 @@
 import api from '@/api';
 import Cookies from 'js-cookie';
-
+import CONFIG from '@/config';
 // function getLangFromAuthorization(authorization) { 
 //   let _authorization = decodeURIComponent(authorization); 
 //   _authorization = _authorization.split('.')[1]; 
@@ -20,7 +20,7 @@ const serviceLangToLocale = {
 export default {
   state: {
     userData: {},
-    lang: 'zh'
+    lang: ''
   },
 
   getters: {
@@ -62,12 +62,21 @@ export default {
     }) {
       const errMsg = 'login';
       return new Promise((resolve, reject) => {
-        let data = JSON.parse(sessionStorage.userData) || {};
-        if (Object.keys(data).length > 0) {
-          dispatch('SetUserData', data);
-          resolve(data);
-        } else {
-          reject(errMsg);
+        let data = sessionStorage.userData || Cookies.get('userData');
+        if (!data) {
+          return false;
+        }
+        try {
+          data = JSON.parse(data) || {};
+          console.log(data);
+          if (Object.keys(data).length > 0) {
+            dispatch('SetUserData', data);
+            resolve(data);
+          } else {
+            reject(errMsg);
+          }
+        } catch (e) {
+          reject(e);
         }
       });
     },
@@ -87,7 +96,10 @@ export default {
       commit,
       dispatch
     }, data) {
-      Cookies.set('Authorization', data.Authorization);
+      if (Cookies.get('Authorization') !== data.Authorization) {
+        Cookies.set('Authorization', data.Authorization);
+      }
+      
       dispatch('GetLang', data);
       commit('SET_USER', data);
     },
@@ -96,8 +108,13 @@ export default {
     GetLang({
       commit
     }, data) {
-      let lang = data.language;
-      commit('SET_LANG', serviceLangToLocale[lang]);
+      // cookie里有设置语言就不更新
+      if (Cookies.get(CONFIG.COOKIE_LANG)) {
+        commit('SET_LANG', Cookies.get(CONFIG.COOKIE_LANG));
+      } else {
+        let lang = data.language;
+        commit('SET_LANG', serviceLangToLocale[lang]);
+      }
     }
   },
 

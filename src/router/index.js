@@ -31,21 +31,15 @@ let routes = [{
   }]
 }];
 
-const routerContext = require.context(
-  './', 
-  true, 
-  /index\.js$/
-);
-routerContext.keys().forEach(route => {
-  if (route.startsWith('./index')) {
-    return;
-  }
-  const routerModule = routerContext(route);
-  /**
-   * 兼容 import export 和 require module.export 两种规法
-   */
-  routes = [...routes, ...Layout(routerModule.default || routerModule)];
-});
+// TODO需要改造，把路由插到layout里
+// const routerContext = require.context('./', true, /index\.js$/);
+// routerContext.keys().forEach(route => {
+//   if (route.startsWith('./index')) {
+//     return;
+//   }
+//   const routerModule = routerContext(route);
+//   routes = [...routes, ...Layout(routerModule.default || routerModule)];
+// });
 
 export default new Router({
   mode: 'history',
