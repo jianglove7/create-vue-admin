@@ -63,12 +63,12 @@ export default {
       const errMsg = 'login';
       return new Promise((resolve, reject) => {
         let data = sessionStorage.userData || Cookies.get('userData');
-        if (!data) {
-          return false;
-        }
+        // console.log(data);
+        // if (!data) {
+        //   reject();
+        // }
         try {
           data = JSON.parse(data) || {};
-          console.log(data);
           if (Object.keys(data).length > 0) {
             dispatch('SetUserData', data);
             resolve(data);
@@ -96,10 +96,7 @@ export default {
       commit,
       dispatch
     }, data) {
-      if (Cookies.get('Authorization') !== data.Authorization) {
-        Cookies.set('Authorization', data.Authorization);
-      }
-      
+      Cookies.set('Authorization', data.Authorization);
       dispatch('GetLang', data);
       commit('SET_USER', data);
     },
