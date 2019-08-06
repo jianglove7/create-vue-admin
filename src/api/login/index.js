@@ -7,6 +7,6 @@ export default {
   userInfo: {
     mock: '/static/api/userInfo.json',
     server: '/login',
-    method: 'get'
+    method: 'post'
   },
 };
