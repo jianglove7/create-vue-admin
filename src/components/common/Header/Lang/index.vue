@@ -61,7 +61,6 @@ export default {
   },
   methods: {
     handleCommand(lang) {
-      console.log(lang);
       setLang(lang);
     }
   },

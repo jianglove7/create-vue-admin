@@ -11,11 +11,12 @@ const plugins = [
   ]
 ];
 
+// 去除console
 if (IS_PROD) {
   plugins.unshift([
     'transform-remove-console',
     {
-      exclude: ['error', 'warn']
+      exclude: ['error', 'warn', 'log']
     }
   ]);
 }

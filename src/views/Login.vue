@@ -44,7 +44,6 @@ export default {
   },
   methods: {
     handleKeyUp(event) {
-      console.log(event);
       if (event.keyCode === 13) {
         this.submit();
       }
@@ -63,7 +62,6 @@ export default {
           this.$router.push('/index');
         }
       });
-      console.log('submit');
     }
   }
 };

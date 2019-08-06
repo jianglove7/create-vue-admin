@@ -5,6 +5,7 @@ module.exports = {
       basePath: './dist',
       spritePath: './dist/img/sprites',
       retina: true,
+      // 只合并sprites目录的png文件
       filterBy: function (image) {
         // Allow only png files
         if (image.url.includes('sprites')) {
@@ -15,6 +16,8 @@ module.exports = {
         }
         return Promise.reject(new Error(' Allow only png files'));
       },
+
+      // 雪碧图分组
       groupBy: function (image) {
         const spritesPaths = image.url.split('sprites');
         if (spritesPaths.length > 1) {
