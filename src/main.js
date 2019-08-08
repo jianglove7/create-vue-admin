@@ -14,8 +14,8 @@ import 'element-ui/lib/theme-chalk/index.css';
 
 import './components';
 
-import '@/assets/normalize.css';
-import '@/assets/style.scss';
+import '@/assets/styles/normalize.css';
+import '@/assets/styles/style.scss';
 
 // 注册全局过滤器
 import filters from './filters';
