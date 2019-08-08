@@ -5,13 +5,14 @@
       <!--  :default-openeds="['1', '3']" -->
       <template v-for="(item,index) in menuList">
         <el-menu-item v-if="!item.children" :index="'main-'+index" :key="index" @click="goPage(item.path)">
-          <i class="el-icon-menu"></i>
+          
+          <base-icon :iconClass="item.icon"></base-icon>
           <span slot="title">{{$t(`menu.${item.name}`)}}</span>
         </el-menu-item>
 
         <el-submenu v-if="item.children" :index="'main-'+index" :key="index">
           <template slot="title" @click="goPage(subItem.path)">
-            <i class="el-icon-message"></i>
+            <base-icon :iconClass="item.icon"></base-icon>
             {{$t(`menu.${item.name}`)}}
           </template>
 
@@ -19,7 +20,7 @@
             <!-- <template slot="title">分组一</template> -->
             <el-menu-item v-for="(subItem,subIndex) in item.children" :index="`sub-${index}-${subIndex}`"
               :key="`${index}-${subIndex}`" @click="goPage(subItem.path)">
-              <i class="el-icon-message"></i>
+              <base-icon :iconClass="subItem.icon"></base-icon>
               {{$t(`menu.${subItem.name}`)}}
             </el-menu-item>
           </el-menu-item-group>
@@ -71,6 +72,9 @@ export default {
         color: #ccc;
       }
 
+    }
+    .base-icon{
+      margin-right: 5px;
     }
   }
 </style>

@@ -8,7 +8,7 @@ import
   i18n,
   setLang
 } from '@/locale/i18n-setup';
-import './locale/i18n-setup.js';
+import '@/assets/icons';
 
 import 'element-ui/lib/theme-chalk/index.css';
 
