@@ -54,6 +54,11 @@ export default {
   computed: {
     // ...mapGetters(['getCurrentMenuStyle'])
   },
+  watch: {
+    $route() {
+      this.changeBreadcrumb(this.$route);
+    }
+  },
   methods: {
     ...mapActions(['BREADCRUMB_ITEMS']),
     changeBreadcrumb (route) {
