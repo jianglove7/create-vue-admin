@@ -4,7 +4,7 @@
         "Authorization": "abcdefg",
         "userName": "admin",
         "language": "zh_CN_",
-        "avatar": "./static/img/head/userImg.jpg",
+        "avatar": "/static/img/head/userImg.jpg",
         "id": "asdsds-sdasdas-asdasdas"
     },
     "msg": "ok"

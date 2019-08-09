@@ -2,6 +2,7 @@ import Vue from 'vue';
 import Router from 'vue-router';
 import Layout from '@/components/common/Layout.vue';
 // import Index from './views/Index.vue';
+import components from './components';
 
 Vue.use(Router);
 
@@ -28,8 +29,12 @@ let routes = [{
     meta: {
       name: '首页',
     }
-  }]
-}];
+  },
+  
+  ]
+},
+...components
+];
 
 // TODO需要改造，把路由插到layout里
 // const routerContext = require.context('./', true, /index\.js$/);

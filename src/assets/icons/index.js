@@ -1,7 +1,17 @@
+<<<<<<< Updated upstream
 import store, { types } from '../../store'
 const requireAll = requireContext => requireContext.keys().map(requireContext)
 const req = require.context('./svg', true, /\.svg$/)
 requireAll(req)
+=======
+/**
+ * 依赖svg-sprite-loader
+ * 介绍：https: //segmentfault.com/a/1190000015367490#articleHeader3
+ */
+<<<<<<< Updated upstream
+>>>>>>> Stashed changes
+=======
+>>>>>>> Stashed changes
 
 const allSvgKeys = req.keys()
 console.log(store)

@@ -1,14 +1,16 @@
 <template>
-  <el-header>
-    <!-- <div>
-      <cc-svg-icon class-name="menu-fold" icon-class="menu-fold" @click="handleMenuFold"></cc-svg-icon>
-    </div> -->
+  <el-header class="header">
+
     <div>
-      <!-- <transition-group tag="el-breadcrumb" separator-class="el-icon-arrow-right" name="fade-move">
-        <el-breadcrumb-item v-for="item in getBreadcrumbItems" :key="item.path">{{ $t(item.name) }}</el-breadcrumb-item>
-      </transition-group> -->
+      <base-icon class-name="menu-fold" icon-class="menu-fold" @click="handleMenuFold"></base-icon>
     </div>
-    <div style="text-align: right; line-height:60px;">
+    <div class="breadcrumb">
+      <transition-group tag="el-breadcrumb" separator-class="el-icon-arrow-right" name="fade-move">
+        <el-breadcrumb-item v-for="item in getBreadcrumbItems" :key="item.path">{{ $t(`menu.${item.name}`) }}</el-breadcrumb-item>
+      </transition-group>
+    </div>
+
+    <div  class="header-right">
        <Lang></Lang>
       <UserSet></UserSet>
     </div>
@@ -16,8 +18,11 @@
 </template>
 
 <script>
+import { mapActions, mapGetters } from 'vuex';
+
 import Lang from './Lang';
 import UserSet from './UserSet';
+
 export default {
   components: {
     Lang,
@@ -36,7 +41,9 @@ export default {
       userData: {}
     };
   },
-  
+  computed: {
+    ...mapGetters(['getMenuCollapse', 'getBreadcrumbItems'])
+  },
   inject: ['reload'],
   mounted() {
     this.locale = this.lang || 'zh';
@@ -56,14 +63,45 @@ export default {
     }
   },
   methods: {
-
+    ...mapActions(['MENU_COLLAPSE']),
+    handleMenuFold () {
+      this.MENU_COLLAPSE(!this.getMenuCollapse);
+    },
   },
 };
 </script>
 
 <style scoped lang="scss">
- .el-header{
-   width: 100%;
-   background-color: #fff;
- }
+$headerHeight: 65px;
+.header {
+  width: 100%;
+  height: $headerHeight;
+  line-height: $headerHeight;
+  padding: 0 35px;
+  background: #fff;
+  @include boxShadow;
+  @include flex(row);
+  justify-content:flex-start;
+  align-items: center;
+
+  .menu-fold {
+    cursor: pointer;
+    width: 16px;
+    height: 16px;
+  }
+  .base-icon{
+      margin-right: 20px;
+    }
+
+  .breadcrumb{
+    flex: 1;
+  }
+  .header-right{
+    float:right;
+    height: 100%;
+    overflow: hidden;
+    @include flex(row);
+    flex-wrap: nowrap;
+  }
+}
 </style>
