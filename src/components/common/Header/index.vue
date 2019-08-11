@@ -6,7 +6,10 @@
     </div>
     <div class="breadcrumb">
       <transition-group tag="el-breadcrumb" separator-class="el-icon-arrow-right" name="fade-move">
-        <el-breadcrumb-item v-for="item in getBreadcrumbItems" :key="item.path">{{ $t(`menu.${item.name}`) }}</el-breadcrumb-item>
+        <template v-for="(item,index) in getBreadcrumbItems">
+          <el-breadcrumb-item v-if="item.name" :key="index">{{ $t(`menu.${item.name}`) }}</el-breadcrumb-item>
+        </template>
+        
       </transition-group>
     </div>
 

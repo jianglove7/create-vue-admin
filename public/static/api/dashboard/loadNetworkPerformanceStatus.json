@@ -1,0 +1,38 @@
+{
+    "networkPerformanceStatus": [{
+        "id": "bcdC2E7c-b3fe-761F-A605-e9f38A1f6Ace",
+        "upload": 5868,
+        "download": 3036,
+        "date": "2019-8-5"
+    }, {
+        "id": "bcdC2E7c-b3fe-761F-A605-e9f38A1f6Ace",
+        "upload": 2409,
+        "download": 2184,
+        "date": "2019-8-6"
+    }, {
+        "id": "bcdC2E7c-b3fe-761F-A605-e9f38A1f6Ace",
+        "upload": 1692,
+        "download": 3959,
+        "date": "2019-8-7"
+    }, {
+        "id": "bcdC2E7c-b3fe-761F-A605-e9f38A1f6Ace",
+        "upload": 4934,
+        "download": 4563,
+        "date": "2019-8-8"
+    }, {
+        "id": "bcdC2E7c-b3fe-761F-A605-e9f38A1f6Ace",
+        "upload": 1096,
+        "download": 1981,
+        "date": "2019-8-9"
+    }, {
+        "id": "bcdC2E7c-b3fe-761F-A605-e9f38A1f6Ace",
+        "upload": 1010,
+        "download": 4763,
+        "date": "2019-8-10"
+    }, {
+        "id": "bcdC2E7c-b3fe-761F-A605-e9f38A1f6Ace",
+        "upload": 5236,
+        "download": 4810,
+        "date": "2019-8-11"
+    }]
+}

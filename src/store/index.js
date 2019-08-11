@@ -39,6 +39,7 @@ export default new vuex.Store({
       return state[types.MENU_COLLAPSE];
     },
     getBreadcrumbItems(state) {
+      console.log(state[types.BREADCRUMB_ITEMS]);
       return state[types.BREADCRUMB_ITEMS];
     },
   },

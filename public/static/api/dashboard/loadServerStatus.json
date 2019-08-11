@@ -1,0 +1,27 @@
+{
+    "serverData": [{
+        "name": "CPU Usage",
+        "value": 40,
+        "color": "#ef4e74"
+    }, {
+        "name": "Memory Usage ( 16 GB )",
+        "value": 60,
+        "color": "#00b0ef"
+    }, {
+        "name": "Disk Usage ( C:\\ 120GB )",
+        "value": 55,
+        "color": "#44c788"
+    }, {
+        "name": "Domain ( 2/5 )",
+        "value": 66,
+        "color": "#f19a4c"
+    }, {
+        "name": "Database ( 90/100 )",
+        "value": 90,
+        "color": "#bd3873"
+    }, {
+        "name": "Email Account ( 25/50 )",
+        "value": 50,
+        "color": "#665ca8"
+    }]
+}

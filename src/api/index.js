@@ -6,6 +6,7 @@ import axios from 'axios';
 
 let urls = {
   login: require('./login').default,
+  dashboard: require('./dashboard').default,
 };
 
 // 全局loading在这里设置好

@@ -2,23 +2,27 @@ import Vue from 'vue';
 import App from './App.vue';
 import router from './router';
 import store from './store';
+
 import ElementUI from 'element-ui';
-import 
-{
-  i18n,
-  setLang
-} from '@/locale/i18n-setup';
-import '@/assets/icons';
 
 import 'element-ui/lib/theme-chalk/index.css';
-
-import './components';
-
 import '@/assets/styles/normalize.css';
 import '@/assets/styles/style.scss';
 
+import {
+  i18n,
+  setLang
+} from '@/locale/i18n-setup';
+import {
+  apiInstall
+} from '@/api';
+import '@/assets/icons';
+import './components';
+
+import tween from './lib/tween.js';
 // 注册全局过滤器
 import filters from './filters';
+
 for (let filter in Object.keys(filters)) {
   Vue.filter(filter, filters[filter]);
 }
@@ -46,6 +50,9 @@ Vue.use(ElementUI, {
   zIndex: 3000,
   i18n: (key, value) => i18n.t(key, value)
 });
+
+Vue.use(apiInstall);
+Vue.use(tween);
 
 Vue.config.productionTip = false;
 

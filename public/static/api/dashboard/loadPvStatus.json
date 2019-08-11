@@ -1,0 +1,77 @@
+{
+    "visitsChartData": {
+        "columns": ["date", "Visits"],
+        "rows": [{
+            "date": "2019-8-5",
+            "Visits": 1393
+        }, {
+            "date": "2019-8-6",
+            "Visits": 3530
+        }, {
+            "date": "2019-8-7",
+            "Visits": 2923
+        }, {
+            "date": "2019-8-8",
+            "Visits": 1723
+        }, {
+            "date": "2019-8-9",
+            "Visits": 3792
+        }, {
+            "date": "2019-8-10",
+            "Visits": 4593
+        }, {
+            "date": "2019-8-11",
+            "Visits": 5000
+        }]
+    },
+    "returningChartData": {
+        "columns": ["date", "returning visits"],
+        "rows": [{
+            "date": "2019-8-5",
+            "returning visits": 3000
+        }, {
+            "date": "2019-8-6",
+            "returning visits": 1000
+        }, {
+            "date": "2019-8-7",
+            "returning visits": 2000
+        }, {
+            "date": "2019-8-8",
+            "returning visits": 2700
+        }, {
+            "date": "2019-8-9",
+            "returning visits": 2200
+        }, {
+            "date": "2019-8-10",
+            "returning visits": 2800
+        }, {
+            "date": "2019-8-11",
+            "returning visits": 3000
+        }]
+    },
+    "pageVisitsChartData": {
+        "columns": ["date", "returning visits"],
+        "rows": [{
+            "date": "2019-8-5",
+            "returning visits": 500
+        }, {
+            "date": "2019-8-6",
+            "returning visits": 1000
+        }, {
+            "date": "2019-8-7",
+            "returning visits": 2000
+        }, {
+            "date": "2019-8-8",
+            "returning visits": 3000
+        }, {
+            "date": "2019-8-9",
+            "returning visits": 2200
+        }, {
+            "date": "2019-8-10",
+            "returning visits": 2800
+        }, {
+            "date": "2019-8-11",
+            "returning visits": 2000
+        }]
+    }
+}
