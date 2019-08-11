@@ -125,7 +125,8 @@ module.exports = {
         axios: 'axios',
         'element-ui': 'ELEMENT',
         'vue-router': 'VueRouter',
-        vuex: 'Vuex'
+        vuex: 'Vuex',
+        // '@tweenjs/tween.js': 'TWEEN'
       };
       config.externals(externals);
       const cdn = {
@@ -143,7 +144,8 @@ module.exports = {
           // axios
           '//cdn.staticfile.org/axios/0.19.0-beta.1/axios.min.js',
           // element-ui js
-          '//unpkg.com/element-ui/lib/index.js'
+          '//unpkg.com/element-ui/lib/index.js',
+          // 'https://code.createjs.com/1.0.0/tweenjs.min.js'
         ]
       };
       config.plugin('html')

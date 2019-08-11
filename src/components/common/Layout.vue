@@ -19,7 +19,7 @@
 import Header from './Header';
 import Sider from './Sider';
 import { setLang } from '@/locale/i18n-setup';
-import { mapActions, mapGetters } from 'vuex';
+import { mapActions } from 'vuex'; //, mapGetters
 import menuConfig from '@/config/menuConfig.js';
 export default {
   
