@@ -136,9 +136,9 @@ module.exports = {
         ],
         js: [
           // vue
-          '//cdn.staticfile.org/vue/2.5.22/vue.min.js',
+          '//cdn.staticfile.org/vue/2.6.10/vue.min.js',
           // vue-router
-          '//cdn.staticfile.org/vue-router/3.0.2/vue-router.min.js',
+          '//cdn.staticfile.org/vue-router/3.0.3/vue-router.min.js',
           // vuex
           '//cdn.staticfile.org/vuex/3.1.0/vuex.min.js',
           // axios
